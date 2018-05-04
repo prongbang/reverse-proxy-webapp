@@ -10,7 +10,7 @@ $ docker run -d \
   --name reverse-proxy \
   -p 80:80 \
   -v /var/run/docker.sock:/tmp/docker.sock:ro \
-  --net sandbox_network jwilder/nginx-proxy:alpine
+  --net nginx-proxy-network jwilder/nginx-proxy:alpine
 ```
 
 # nginx config for websites
@@ -85,7 +85,7 @@ services:
 networks:
   default:
     external:
-      name: sandbox_network
+      name: nginx-proxy-network
 ```
 
 # Create and start container
